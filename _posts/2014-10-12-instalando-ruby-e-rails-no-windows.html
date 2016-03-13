@@ -1,0 +1,81 @@
+---
+layout: post
+status: publish
+published: true
+title: Instalando Ruby e Rails no Windows
+author:
+  display_name: João Almeida
+  login: joaorsalmeida
+  email: joaorsalmeida@gmail.com
+  url: ''
+author_login: joaorsalmeida
+author_email: joaorsalmeida@gmail.com
+excerpt: "Muitas pessoas que se interessam pelo desenvolvimento em Ruby e Rails e
+  utilizam Windows como SO enfrentam dificuldades para configurar o ambiente. Na verdade
+  conhe&ccedil;o pessoas que desistiram j&aacute; na instala&ccedil;&atilde;o :(\r\n\r\nConfesso
+  que n&atilde;o sou f&atilde; do Windows como SO para desenvolvimento. Por&eacute;m
+  sei que muitas pessoas gostam desse ambiente e n&atilde;o acho justo restringir
+  o uso de um linguagem desta forma.&nbsp;A falta de tutoriais atualizados sobre este
+  assunto motivou escrever este post.\r\n\r\n"
+wordpress_id: 9
+wordpress_url: http://campuscode.com.br/blog/?p=9
+date: '2014-10-12 18:30:23 -0300'
+date_gmt: '2014-10-12 21:30:23 -0300'
+categories:
+- Tutoriais
+tags:
+- tutorial
+- rails
+- ruby
+- windows
+- sqlite
+comments: []
+---
+<p>Muitas pessoas que se interessam pelo desenvolvimento em Ruby e Rails e utilizam Windows como SO enfrentam dificuldades para configurar o ambiente. Na verdade conhe&ccedil;o pessoas que desistiram j&aacute; na instala&ccedil;&atilde;o :(</p>
+<p>Confesso que n&atilde;o sou f&atilde; do Windows como SO para desenvolvimento. Por&eacute;m sei que muitas pessoas gostam desse ambiente e n&atilde;o acho justo restringir o uso de um linguagem desta forma.&nbsp;A falta de tutoriais atualizados sobre este assunto motivou escrever este post.</p>
+<p><a id="more"></a><a id="more-9"></a></p>
+<p>Numa r&aacute;pida pesquisa pelo Google aparecem algumas op&ccedil;&otilde;es que prefiro descartar. Destaco algumas:</p>
+<ul>
+<li><a href="http:&#47;&#47;railsinstaller.org" target="_blank">Rails Installer<&#47;a>: A proposta &eacute; muito interessante por&eacute;m est&aacute; defasada. A &uacute;ltima vers&atilde;o oferece somente Ruby 1.9 e Rails 3.2.<&#47;li>
+<li><a href="https:&#47;&#47;www.nitrous.io" target="_blank">Nitrous.io<&#47;a>: Outra id&eacute;ia muito interessante e poderosa. Uma plataforma na nuvem&nbsp;pronta para o desenvolvimento em diversos frameworks e que permite o uso de editores locais. O ponto negativo? &Eacute; pago. Vamos l&aacute;, n&atilde;o queremos gastar dinheiro para testar algo&nbsp;(pelo menos n&atilde;o por enquanto).<&#47;li><br />
+<&#47;ul><br />
+Voltando ao que interessa, aqui no blog vamos apresentar duas formas de instalar todo ambiente Ruby on Rails no Windows. Come&ccedil;ando com a mais trabalhosa mas que permite entender um pouco melhor como toda m&aacute;gica come&ccedil;a a acontecer.</p>
+<p><strong>Ruby Installer + Prompt de Comando<&#47;strong></p>
+<p>Acesse o site do <a href="http:&#47;&#47;rubyinstaller.org" target="_blank">RubyInstaller<&#47;a>&nbsp;e fa&ccedil;a o download da vers&atilde;o mais recente.</p>
+<p>[caption id="attachment_11" align="aligncenter" width="449"]<a href="http:&#47;&#47;campuscode.com.br&#47;blog&#47;wp-content&#47;uploads&#47;2014&#47;10&#47;Screen-Shot-2014-10-12-at-16.51.23.png"><img class="wp-image-11 size-large" src="http:&#47;&#47;campuscode.com.br&#47;blog&#47;wp-content&#47;uploads&#47;2014&#47;10&#47;Screen-Shot-2014-10-12-at-16.51.23-449x304.png" alt="" width="449" height="304" &#47;><&#47;a> Site do RubyInstaller[&#47;caption]</p>
+<p>Com o download conclu&iacute;do, execute o instalador. N&atilde;o esque&ccedil;a de <strong>habilitar a op&ccedil;&atilde;o<&#47;strong> 'Add Ruby executables to your PATH'.</p>
+<p>&nbsp;</p>
+<p>[caption id="attachment_13" align="aligncenter" width="506"]<a href="http:&#47;&#47;campuscode.com.br&#47;blog&#47;wp-content&#47;uploads&#47;2014&#47;10&#47;Screen-Shot-2014-10-12-at-16.58.38.png"><img class="wp-image-13 size-full" src="http:&#47;&#47;campuscode.com.br&#47;blog&#47;wp-content&#47;uploads&#47;2014&#47;10&#47;Screen-Shot-2014-10-12-at-16.58.38.png" alt="" width="506" height="390" &#47;><&#47;a> Instalador do Ruby Installer[&#47;caption]</p>
+<p>&nbsp;</p>
+<p>Pronto! Com a instala&ccedil;&atilde;o conclu&iacute;da voc&ecirc; j&aacute; pode acessar o <a href="http:&#47;&#47;pt.wikipedia.org&#47;wiki&#47;Prompt_de_comando" target="_blank">Prompt de Comando<&#47;a> ou o Windows PowerShell e executar o comando:</p>
+<p style="text-align: center;"><strong><em>ruby -v<&#47;em><&#47;strong><&#47;p><br />
+&nbsp;<a href="http:&#47;&#47;campuscode.com.br&#47;blog&#47;wp-content&#47;uploads&#47;2014&#47;10&#47;Screen-Shot-2014-10-12-at-17.03.35.png"><img class="aligncenter size-full wp-image-14" src="http:&#47;&#47;campuscode.com.br&#47;blog&#47;wp-content&#47;uploads&#47;2014&#47;10&#47;Screen-Shot-2014-10-12-at-17.03.35.png" alt="Screen Shot 2014-10-12 at 17.03.35" width="559" height="356" &#47;><&#47;a></p>
+<p>O retorno esperado, como visto acima, &eacute; a vers&atilde;o instalado dor Ruby em sua m&aacute;quina.</p>
+<p>Em seguida fa&ccedil;a download&nbsp;do <strong>Development Kit,<&#47;strong> tamb&eacute;m dispon&iacute;vel na <a href="http:&#47;&#47;rubyinstaller.org&#47;downloads&#47;" target="_blank">p&aacute;gina de downloads<&#47;a> do Ruby Installer. No caso da vers&atilde;o do Ruby instalada enquanto escrevo esse tutorial, o download correto seria Ruby 2.0&#47;2.1 32bits. Fique atento a vers&atilde;o do Ruby e a arquitetura do seu Windows ao escolher a op&ccedil;&atilde;o de download.</p>
+<p>&nbsp;</p>
+<p>[caption id="attachment_15" align="aligncenter" width="471"]<a href="http:&#47;&#47;campuscode.com.br&#47;blog&#47;wp-content&#47;uploads&#47;2014&#47;10&#47;Screen-Shot-2014-10-12-at-17.06.57.png"><img class="wp-image-15 size-full" src="http:&#47;&#47;campuscode.com.br&#47;blog&#47;wp-content&#47;uploads&#47;2014&#47;10&#47;Screen-Shot-2014-10-12-at-17.06.57.png" alt="" width="471" height="265" &#47;><&#47;a> Op&ccedil;&otilde;es de download para o Development Kit[&#47;caption]</p>
+<p>Ap&oacute;s concluir o download execute o arquivo e ao escolher a pasta destino procure a pasta de instala&ccedil;&atilde;o do Ruby (geralmente C:\Ruby(numero_de_vers&atilde;o) e acrescente '\devkit'.</p>
+<p>[caption id="attachment_16" align="aligncenter" width="350"]<a href="http:&#47;&#47;campuscode.com.br&#47;blog&#47;wp-content&#47;uploads&#47;2014&#47;10&#47;Screen-Shot-2014-10-12-at-17.11.51.png"><img class="size-full wp-image-16" src="http:&#47;&#47;campuscode.com.br&#47;blog&#47;wp-content&#47;uploads&#47;2014&#47;10&#47;Screen-Shot-2014-10-12-at-17.11.51.png" alt="Pasta destino do DevKit " width="350" height="155" &#47;><&#47;a> Pasta destino do DevKit[&#47;caption]</p>
+<p>Para instalar o Development Kit, volte ao terminal e acesse a pasta informada no passo anterior. Em seguida execute os comandos :</p>
+<p style="text-align: center;"><em><strong>ruby dk.rb init<&#47;strong><&#47;em><&#47;p></p>
+<p style="text-align: center;"><em><strong>ruby dk.rb install<&#47;strong><&#47;em><&#47;p></p>
+<p>[caption id="attachment_17" align="aligncenter" width="679"]<a href="http:&#47;&#47;campuscode.com.br&#47;blog&#47;wp-content&#47;uploads&#47;2014&#47;10&#47;Screen-Shot-2014-10-12-at-17.33.53.png"><img class="size-full wp-image-17" src="http:&#47;&#47;campuscode.com.br&#47;blog&#47;wp-content&#47;uploads&#47;2014&#47;10&#47;Screen-Shot-2014-10-12-at-17.33.53.png" alt="Instala&ccedil;&atilde;o do Development Kit no Prompt de Comando" width="679" height="450" &#47;><&#47;a> Instala&ccedil;&atilde;o do Development Kit no Prompt de Comando[&#47;caption]</p>
+<p>&nbsp;</p>
+<p>Para finalizar vamos instalar o <a href="http:&#47;&#47;rubyonrails.org" target="_blank">Ruby on Rails<&#47;a>. Um pr&eacute;-requisito para essa instala&ccedil;&atilde;o &eacute; possuir algum banco de dados j&aacute; instalado. Neste tutorial vamos utilizar o <a href="http:&#47;&#47;www.sqlite.org&#47;index.html" target="_blank">SQLite3<&#47;a>.</p>
+<p>Acesse a <a href="http:&#47;&#47;www.sqlite.org&#47;download.html" target="_blank">p&aacute;gina de downloads<&#47;a> do SQLite.org. Procure pela se&ccedil;&atilde;o&nbsp;<b>Precompiled Binaries for Windows&nbsp;<&#47;b>e fa&ccedil;a download dos arquivos&nbsp;sqlite-shell-win32-x86*.zip e&nbsp;sqlite-dll-win32-x86*.zip.&nbsp;<b>&nbsp;<&#47;b>Crie a pasta <strong>C:\sqlite3&nbsp;<&#47;strong>e descompacte os 2 arquivos l&aacute; dentro.</p>
+<p>Em seguida, volte ao Prompt de Comando e execute o seguinte comando:</p>
+<p style="text-align: center;"><em><strong>setx path "%path%;c:\sqlite3"<&#47;strong><&#47;em><&#47;p></p>
+<p style="text-align: left;">Pronto! O SQLite deve estar dispon&iacute;vel para uso. Para verificar execute o comando&nbsp;<em><strong>sqlite3 --version&nbsp;<&#47;strong><&#47;em>&nbsp;no Prompt.<&#47;p></p>
+<p>[caption id="attachment_19" align="aligncenter" width="672"]<a href="http:&#47;&#47;campuscode.com.br&#47;blog&#47;wp-content&#47;uploads&#47;2014&#47;10&#47;Screen-Shot-2014-10-12-at-18.09.24.png"><img class="size-full wp-image-19" src="http:&#47;&#47;campuscode.com.br&#47;blog&#47;wp-content&#47;uploads&#47;2014&#47;10&#47;Screen-Shot-2014-10-12-at-18.09.24.png" alt="Verificando a instalacao do SQLite3 " width="672" height="333" &#47;><&#47;a> Verificando a instalacao do SQLite3[&#47;caption]</p>
+<p>A &uacute;ltima parte do tutorial &eacute; justamente a mais simples. A instala&ccedil;&atilde;o do Ruby on Rails &eacute; feita pelo Prompt de Comando usando a ferramenta <a href="http:&#47;&#47;rubygems.org" target="_blank">RubyGems<&#47;a>&nbsp;que j&aacute; est&aacute; dispon&iacute;vel gra&ccedil;as a instala&ccedil;&atilde;o do Ruby que realizamos.</p>
+<p>Basta acessar o Prompt e executar o comando <em><strong>gem install rails<&#47;strong><&#47;em>. V&aacute;rias bibliotecas auxiliares ao Rails ser&atilde;o instaladas automaticamente.</p>
+<p>[caption id="attachment_20" align="aligncenter" width="672"]<a href="http:&#47;&#47;campuscode.com.br&#47;blog&#47;wp-content&#47;uploads&#47;2014&#47;10&#47;Screen-Shot-2014-10-12-at-18.13.09.png"><img class="size-full wp-image-20" src="http:&#47;&#47;campuscode.com.br&#47;blog&#47;wp-content&#47;uploads&#47;2014&#47;10&#47;Screen-Shot-2014-10-12-at-18.13.09.png" alt="Instala&ccedil;&atilde;o do Rails em andamento..." width="672" height="438" &#47;><&#47;a> Instala&ccedil;&atilde;o do Rails em andamento...[&#47;caption]</p>
+<p>Ap&oacute;s a instala&ccedil;&atilde;o voc&ecirc; pode conferir a vers&atilde;o do Rails instalada executando o comando&nbsp;<em><strong>rails -v&nbsp;<&#47;strong><&#47;em>no Prompt.</p>
+<p><strong>Pronto!<&#47;strong> Seu Windows est&aacute; pronto para come&ccedil;ar seu primeiro projeto Ruby on Rails :D</p>
+<p>Continue acompanhando o blog do Campus Code. Em breve postaremos outra forma de configurar Ruby on Rails no Windows e em outro sistemas operacionais.</p>
+<p>Fontes:</p>
+<ul>
+<li>http:&#47;&#47;www.tutorialspoint.com&#47;sqlite&#47;sqlite_installation.htm<&#47;li>
+<li>http:&#47;&#47;simplesideias.com.br&#47;configurando-ruby-rails-mysql-e-git-no-windows<&#47;li>
+<li>http:&#47;&#47;guides.rubyonrails.org&#47;getting_started.html<&#47;li><br />
+<&#47;ul></p>
