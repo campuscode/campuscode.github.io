@@ -52,7 +52,7 @@ Navegue para seu diret&oacute;rio de trabalho (no meu caso ~/workspace) e execut
 
 Pronto! Agora voc&ecirc; pode entrar no diret&oacute;rio e subir o server embarcado do Jekyll para ver seu blog rodando localmente em http://localhost:4000.
 
-<a href="/assets/2015/12/Screen-Shot-2015-12-05-at-18.07.00.png"><img class="size-full wp-image-149" src="/assets/2015/12/Screen-Shot-2015-12-05-at-18.07.00.png" alt="Blog rec&eacute;m criado via Jekyll" width="810" height="581" /> Blog rec&eacute;m criado via Jekyll</a>
+<img class="size-full wp-image-149" src="/assets/2015/12/Screen-Shot-2015-12-05-at-18.07.00.png" alt="Blog rec&eacute;m criado via Jekyll" width="810" height="581" />
 
 ## Configurando seu Github Pages
 
