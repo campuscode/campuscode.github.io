@@ -8,10 +8,12 @@ layout: default
     <p class="post-meta">
     <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
       {{ page.date | date: "%b %-d, %Y" }}</time>
-    {% if page.author %}
+      {% if page.author %}
     • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <span itemprop="name">{{ page.author.display_name }}</span>
-    </span>{% endif %}</p>
+        <span itemprop="name">{{ page.author.display_name }}</span>
+      </span>
+    {% endif %}
+    </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">

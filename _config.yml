@@ -23,3 +23,6 @@ github_username:  campuscode
 
 # Build settings
 markdown: kramdown
+
+# Posts settings
+permalink: /:year/:month/:title.html

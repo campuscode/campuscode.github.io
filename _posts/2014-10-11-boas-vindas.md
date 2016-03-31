@@ -20,7 +20,6 @@ tags:
 - hello-world
 comments: []
 ---
-## Helo World!
 Bem-vindos ao blog oficial do <a href="http://www.campuscode.com.br"
   target="_blank">Campus Code</a>. Criamos esse blog para que todos conhe&ccedil;am um
 pouco do dia-a-dia das nossas Code Sessions. Al&eacute;m disso vamos compartilhar
