@@ -8,19 +8,12 @@ author:
   login: joaorsalmeida
   email: joaorsalmeida@gmail.com
   url: ''
-author_login: joaorsalmeida
-author_email: joaorsalmeida@gmail.com
-wordpress_id: 139
-wordpress_url: http://campuscode.com.br/blog/?p=139
-date: '2015-12-07 15:23:14 -0200'
-date_gmt: '2015-12-07 18:23:14 -0200'
 categories:
 - Tutoriais
 tags:
 - github
 - jekyll
 - blog
-comments: []
 ---
 Ia come&ccedil;ar esse post falando da import&acirc;ncia de devs manterem blogs
 contando experi&ecirc;ncias e compartilhando conhecimento com toda comunidade.
