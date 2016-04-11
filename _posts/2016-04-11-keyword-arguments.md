@@ -5,8 +5,8 @@ author:
   display_name: Alan Batista
 ---
 
-No [Code Saga](http://codesaga.com.br) temos um
-[desafio](http://www.codesaga.com.br/challenges/buscando-o-ruby-parte-1), no qual
+No [Code Saga](http://codesaga.com.br){:target="_blank"} temos um
+[desafio](http://www.codesaga.com.br/challenges/buscando-o-ruby-parte-1){:target="_blank"}, no qual
 surge muitas dúvidas de como solucioná-lo.
 
 Uma característica introduzida no Ruby 2.1 foi o Keyword Arguments e isso pode
@@ -147,7 +147,8 @@ Até mais!
 
 ### Referências
 
-- [Documentação Oficial](https://robots.thoughtbot.com/ruby-2-keyword-arguments)
+- [Documentação
+  Oficial](https://robots.thoughtbot.com/ruby-2-keyword-arguments){:target="_blank"}
 - [Ruby 2 Keyword
-  Arguments](https://robots.thoughtbot.com/ruby-2-keyword-arguments)
+  Arguments](https://robots.thoughtbot.com/ruby-2-keyword-arguments){:target="_blank"}
 
