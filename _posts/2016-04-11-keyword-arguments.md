@@ -5,18 +5,22 @@ author:
   display_name: Alan Batista
 ---
 
-Uma característica introduzida no Ruby 2.1 foi o Keyword Arguments. Vamos ver como
-isso funciona.
+No [Code Saga](http://codesaga.com.br) temos um
+[desafio](http://www.codesaga.com.br/challenges/buscando-o-ruby-parte-1), no qual
+surge muitas dúvidas de como solucioná-lo.
+
+Uma característica introduzida no Ruby 2.1 foi o Keyword Arguments e isso pode
+no ajudar nesse desafio. Vamos ver como isso funciona.
 
 Suponha que você quer um parametro opcional, para isso você faria:
 
 ```ruby
 def pagar(valor, forma_pagto='boleto')
- puts "Pagando #{valor} com #{forma_pagto}"
+ puts "Pagando R$#{valor} com #{forma_pagto}"
 end
 
 pagar(1000)
-#=> Pagando 1000 com boleto
+#=> Pagando R$1000 com boleto
 ```
 
 O código acima não tem nenhum problema, mas requer do programador que vai usá-lo
@@ -24,7 +28,7 @@ conhecer no minimo quais parametros e em qual ordem eles são esperados:
 
 ```ruby
 pagar('cartão', 1000)
-#=> Pagando cartão com 1000
+#=> Pagando R$cartão com 1000
 ```
 
 
@@ -32,17 +36,17 @@ Esse caso o **keyword arguments** ajuda muito, veja o exemplo:
 
 ```ruby
 def pagar(valor:, forma_pagto: 'boleto')
-  puts "Pagando #{valor} com #{forma_pagto}"
+  puts "Pagando R$#{valor} com #{forma_pagto}"
 end
 
 pagar(1000)
-#=>Boooom! ArgumentError: wrong number of arguments (given 1, expected 0)
+#=>BOOOOM! ArgumentError: wrong number of arguments (given 1, expected 0)
 
 pagar(valor: 1000)
-#=> Pagando 1000 com boleto
+#=> Pagando R$1000 com boleto
 
 pagar(forma_pagto: 'Cartão', valor: 1300)
-#=> Pagando 1300 com Cartão
+#=> Pagando R$1300 com Cartão
 ```
 
 Veja que na segunda execução do método `#pagar` nós passamos os parametros em
@@ -53,16 +57,16 @@ Podemos esperar argumentos adicionais, porem também "nomeados", veja:
 
 ```ruby
 def pagar(valor:, forma_pagto:, **opcoes)
-  puts "Pagando #{valor} com #{forma_pagto}"
+  puts "Pagando R$#{valor} com #{forma_pagto}"
   puts "Opcoes #{opcoes}"
 end
 
 pagar(forma_pagto: 'Cartão', valor: 1300, limite:3000, autorizado: true)
-#=> Pagando 1300 com Cartão
+#=> Pagando R$1300 com Cartão
 Opcoes {:limite=>3000, autorizado: true}
 
 pagar(forma_pagto: 'Cartão', valor: 1300, 3000, true)
-#=> Boomm!!! SyntaxError: (irb):26: syntax error, unexpected ',', expecting =>
+#=> BOOOOM!!! SyntaxError: (irb):26: syntax error, unexpected ',', expecting =>
 ```
 
 A segunda execução do exemplo acima nos mostra, se usar keywork arguments,
@@ -99,7 +103,7 @@ algum_metodo(arg1: 1431, arg2: 'valor', arg3: :symb)
 #=> valor arg1: 1431 arg2: valor arg3: :symb
 
 algum_metodo(arg1: 1431, arg2: 'valor', arg1: :symb)
-#=> Booom! ArgumentError: missing keyword: arg3
+#=> BOOOOM! ArgumentError: missing keyword: arg3
 ```
 
 ## Keyword Arguments X Argumentos Posicionais
@@ -131,8 +135,9 @@ ordem dos argumentos não são lá tão intuitivos quando parecem a primeira
 impressão.
 
 Uma boa regra é, poucos argumentos (1 ou 2), que fazem sentido na ordem que você
-usou, não são candidatos para keyword arguments, 3 ou mais podem ser candidatos
-a um belo **Refactoring**, mas isso é assunto para outro post ;).
+implementou, não são necessariamente candidatos para keyword arguments. Métodos
+com  3 ou mais podem ser candidatos a um belo **Refactoring**, mas isso é
+assunto para outro post ;).
 
 E você, o que acha dos keyword arguments, devemos usá-los quando? Deixe seu
 comentário.
