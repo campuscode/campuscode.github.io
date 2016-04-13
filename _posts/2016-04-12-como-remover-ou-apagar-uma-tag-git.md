@@ -29,7 +29,7 @@ faça:
 git push origin master --tags
 ```
 
-Esse comando, além do _push_ que a gente já conhece, faz também o envia das tags
+Esse comando, além do _push_ que a gente já conhece, faz também o envio das tags
 para o seu repositório remoto.
 
 ## Removendo uma tag
@@ -51,9 +51,7 @@ Mas para apagar a tag que está no servidor remoto é um pouco diferente:
 git push origin :refs/tags/1.0.9
 ```
 
-Para apagar um tag você precisa indicar qual o caminho dela, esse caminho fica
-na pasta `.git` do seu repositório e dentro da pasta `refs/tags/` ficam arquivos
-com o nome da tag e o hash do commit que esta referencia.
+Para apagar um tag você precisa indicar qual o caminho da tag. Explicando um pouco mais dos _internals_ do Git, cada tag é armazenada como um arquivo onde o nome desse arquivo é a tag e seu conteúdo é a _hash_ do commit que a tag referencia. Estes arquivos ficam na pasta `.git` do seu repositório, dentro da pasta `refs/tags/`.
 
 Espero que com a explicação você não precisa recorrer ao Google para encontrar a
 resposta para essa dúvida tão "remota".
