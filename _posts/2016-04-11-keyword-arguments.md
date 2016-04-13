@@ -6,13 +6,13 @@ author:
 ---
 
 No [Code Saga](http://codesaga.com.br){:target="_blank"} temos um
-[desafio](http://www.codesaga.com.br/challenges/buscando-o-ruby-parte-1){:target="_blank"}, no qual
-surge muitas dúvidas de como solucioná-lo.
+[desafio](http://www.codesaga.com.br/challenges/buscando-o-ruby-parte-1){:target="_blank"},
+em que surgem muitas dúvidas sobre como solucioná-lo.
 
-Uma característica introduzida no Ruby 2.1 foi o Keyword Arguments e isso pode
+Uma característica introduzida no Ruby 2.1 foi o **Keyword Arguments** e ela pode
 no ajudar nesse desafio. Vamos ver como isso funciona.
 
-Suponha que você quer um parametro opcional, para isso você faria:
+Suponha que você quer um parâmetro opcional, para isso você faria:
 
 ```ruby
 def pagar(valor, forma_pagto='boleto')
@@ -24,7 +24,7 @@ pagar(1000)
 ```
 
 O código acima não tem nenhum problema, mas requer do programador que vai usá-lo
-conhecer no minimo quais parametros e em qual ordem eles são esperados:
+conhecer no mínimo quais parametros e em qual ordem eles são esperados:
 
 ```ruby
 pagar('cartão', 1000)
@@ -32,7 +32,7 @@ pagar('cartão', 1000)
 ```
 
 
-Esse caso o **keyword arguments** ajuda muito, veja o exemplo:
+Nesse caso o **keyword arguments** ajuda muito, veja o exemplo:
 
 ```ruby
 def pagar(valor:, forma_pagto: 'boleto')
@@ -53,7 +53,7 @@ Veja que na segunda execução do método `#pagar` nós passamos os parametros e
 ordem diferente da qual eles foram declarados e ainda assim o método funcionou
 como esperado.
 
-Podemos esperar argumentos adicionais, porem também "nomeados", veja:
+Podemos esperar argumentos adicionais, porém também "nomeados", veja:
 
 ```ruby
 def pagar(valor:, forma_pagto:, **opcoes)
@@ -69,8 +69,8 @@ pagar(forma_pagto: 'Cartão', valor: 1300, 3000, true)
 #=> BOOOOM!!! SyntaxError: (irb):26: syntax error, unexpected ',', expecting =>
 ```
 
-A segunda execução do exemplo acima nos mostra, se usar keywork arguments,
-deverá nomear qualquer argumento, até os adicionais!
+A segunda execução do exemplo acima nos mostra que o uso de _keyword arguments_
+exige a nomeação de qualquer argumento, até os adicionais!
 
 ## Keyword Arguments X Hash arguments
 
@@ -123,20 +123,20 @@ meu_link_to('Texto', posts_path, "post_link")
 #=> <a class="post_link" href="Texto">/posts</a>
 ```
 
-Um pouco estranho, né? Você, durante a implementação, achou que colocar o path
-ou url como primeiro argumento faria todo o sentido, mas esqueceu disso quando
-foi utilizar o método. É a vida, não é mesmo!
+Um pouco estranho, né? Você, durante a implementação, achou que colocar o _path_
+ou _url_ como primeiro argumento faria todo o sentido, mas esqueceu disso quando
+foi utilizar o método. É a vida, não é mesmo?!
 
 ## Considerações
 
 Não há reais motivos para você sair refatorando todos seus códigos agora, mas é
 bom considerar **keyword arguments** quando implementar aquele métodos que a
-ordem dos argumentos não são lá tão intuitivos quando parecem a primeira
+ordem dos argumentos não são lá tão intuitivos quanto parecem a primeira
 impressão.
 
-Uma boa regra é, poucos argumentos (1 ou 2), que fazem sentido na ordem que você
+Uma boa regra é, poucos argumentos (1 ou 2), que façam sentido na ordem que você
 implementou, não são necessariamente candidatos para keyword arguments. Métodos
-com  3 ou mais podem ser candidatos a um belo **Refactoring**, mas isso é
+com 3 ou mais argumentos podem ser candidatos a um belo **Refactoring**, mas isso é
 assunto para outro post ;).
 
 E você, o que acha dos keyword arguments, devemos usá-los quando? Deixe seu
@@ -151,4 +151,3 @@ Até mais!
   Oficial](https://robots.thoughtbot.com/ruby-2-keyword-arguments){:target="_blank"}
 - [Ruby 2 Keyword
   Arguments](https://robots.thoughtbot.com/ruby-2-keyword-arguments){:target="_blank"}
-
