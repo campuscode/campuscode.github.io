@@ -63,7 +63,7 @@ end
 ```
 
 E por último, adicione a seguinte linha no seu
-`app/assets/javacripts/application.js`:
+`app/assets/javascripts/application.js`:
 
 ```
 //= require rails.validations
@@ -148,7 +148,7 @@ E para adicionar no seu form é simples como deve ser:
 
 Na documentação do [Rails][rails-validators] temos exemplos de custom validators
 (validadores customizados) e aqui vamos mostrar um exemplo de um validator para
-CEP que precisará de um validação no servidor.
+CEP que precisará de um validação no remota servidor, faremos isso com AJAX.
 
 Vamos começar criando nosso model __Cep__:
 
@@ -158,8 +158,17 @@ rails g model cep codigo:string
 
 Onde _codigo_ é o número do CEP.
 
-Vamos assumir que você tem um modelo _Company_ (ou qualquer outro nome) com um
-atributo CEP do tipo _String_.
+No nosso caso vamos adicionar no nosso model __Customer__ o atributo cep:
+
+```
+rails g migration add_cep_to_customer cep
+```
+
+E não se esqueça de rodar as migrations:
+
+```
+rake db:migrate
+```
 
 Vamos criar uma validação no server com o arquivo
 `app/validators/cep_validator.rb`, lembrando que a pasta validators também
@@ -203,6 +212,9 @@ window.ClientSideValidations.validators.remote['cep'] = function(element, option
   }).status == 404) { return options.message; }
 }
 ```
+
+Veja que `cep` nesse caso é o nome da validação e não do campo. (Sim, eu achei
+ambíguo).
 
 Agora nós precisamos criar um middleware para lidar com a validação client side,
 para isso vamos criar o arquivo `lib/client_side_validations/middleware/cep.rb`:
@@ -278,6 +290,13 @@ pt-BR:
 
 Você deve inserir a linha `cep: CEP inexistente` abaixo de `messages:` e
 identado com dois espaços.
+
+## Conclusão
+
+Com essa gem fica fácil adicionar validação Client Side, mesmo para as
+validações remotas, se feita com atenção, é bastante simples.
+
+E nos seus projetos, como você costuma criar as validações?
 
 [ClientSideValidations]:https://github.com/DavyJonesLocker/client_side_validations
 [bestpraticesvalidations]:http://alistapart.com/article/inline-validation-in-web-forms
