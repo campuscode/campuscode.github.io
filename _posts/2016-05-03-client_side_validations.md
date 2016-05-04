@@ -10,18 +10,18 @@ Com alguma frequência nos perguntam como fazer validação no browser, que nest
 post chamaremos de _Client Side Validations_ ou validações no lado do cliente.
 
 Não há resposta certa aqui, dependendo da habilidade do programador que está
-perguntando poderia dar algumas respostas, entre elas é: _Deixe pra lá e valide
-somente no servidor com as validações do ActiveRecord_, mas essa por sua vez
-nem sempre agrada.
+perguntando poderia dar algumas respostas, entre elas: _Deixe pra lá e valide
+somente no servidor com as validações do ActiveRecord_, mas essa nem sempre
+agrada.
 
-Outra resposta é implemente você em javacript, porém há um problema, você terá
-que refletir exatamente as validações que você fez no server, afim de deixar seu
-código minimamente coerente e lembre-se, você terá que manter essas validações
-semelhantes durante o ciclo de vida do seu projeto.
+Outra resposta é: implemente você em Javascript. O ponto negativo aqui é que
+você terá que refletir exatamente as validações que você fez no server, afim de
+deixar seu código minimamente coerente e lembre-se, você terá que manter essas
+validações semelhantes durante o ciclo de vida do seu projeto.
 
 Agora, se o programador tiver alguma experiência prévia e realmente precisar
 implementar tais validações, uma alternativa é sugerir a gem
-[ClientSideValidations][ClientSideValidations], além de razoavelmente fácil de
+[ClientSideValidations][ClientSideValidations]. Além de razoavelmente fácil de
 ser inserida no seu projeto, ela se preocupa com algumas boas práticas, tais
 como aplicar as validações que estão no server no client, entre
 [outras][bestpraticesvalidations].
@@ -62,7 +62,7 @@ ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
 end
 ```
 
-E por ultimo, adicione a seguinte linha no seu
+E por último, adicione a seguinte linha no seu
 `app/assets/javacripts/application.js`:
 
 ```
@@ -71,26 +71,22 @@ E por ultimo, adicione a seguinte linha no seu
 
 ## Uso
 
-Se você utilizou scaffold no seu projeto (o que eu espero que não!!!) seu
-projeto estará quase pronto, mas com aquela _carinha_ bacana que só o _scaffold_
-faz por você, mas caso não tenha usado, vamos editar um arquivo css, mas não
-agora.
-
-Agora no seu form você deve dizer que usará validações, como a seguir:
-
-```erb
-<%= form_for(@model, validate: true) %>
-...
-<% end %>
-```
-
-No seu model dever ter as validações necessárias, exemplo:
+No projeto que estou usando para este post, já existe uma classe _Customer_ com
+algumas validações do Rails.
 
 ```ruby
 class Customer < ActiveRecord::Base
   validates :name, :cpf, :address_number, :address_street, presence: true
 end
 
+```
+
+No form devemos informar que queremos a validação no lado do cliente:
+
+```erb
+<%= form_for(@model, validate: true) %>
+  ...
+<% end %>
 ```
 
 Abra seu projeto para testá-lo:
@@ -105,13 +101,18 @@ No meu teste, fiz a validação em um model Customer, então vamos vê-lo no bro
 http://localhost:3000/customers/new
 ```
 
-Veja agora como fica sem o client_side_validations:
+## Resultado
+
+Antes, sem o client_side_validations:
 
 ![Sem client_side_validations](/assets/images/sem_client_side.gif)
 
 E agora com client_side_validations:
 
 ![Com client_side_validations](/assets/images/com_client_side.gif)
+
+
+## SimpleForm
 
 Calma que não acabamos ainda, esse gem tem um plugin para o
 [SimpleForm][simple-form] que para nós aqui no __Campus Code__ faz toda a
@@ -133,7 +134,7 @@ a linha que você já tinha adicionado:
 ```
 
 Caso esse linha seja adicionada antes do `//=require rails.validations` você
-receberá um erro de javascript na sua página por conta das dependências.
+receberá um erro de Javascript na sua página por conta das dependências.
 
 E para adicionar no seu form é simples como deve ser:
 
@@ -146,8 +147,8 @@ E para adicionar no seu form é simples como deve ser:
 ## Custom Validators
 
 Na documentação do [Rails][rails-validators] temos exemplos de custom validators
-(Validadores customizados) e aqui vamos mostrar um exemplo de um validator para
-Cep, o qual necessitará de um validação no servidor.
+(validadores customizados) e aqui vamos mostrar um exemplo de um validator para
+CEP que precisará de um validação no servidor.
 
 Vamos começar criando nosso model __Cep__:
 
@@ -155,12 +156,12 @@ Vamos começar criando nosso model __Cep__:
 rails g model cep codigo:string
 ```
 
-Onde _codigo_ é o número do cep.
+Onde _codigo_ é o número do CEP.
 
 Vamos assumir que você tem um modelo _Company_ (ou qualquer outro nome) com um
-atributo cep do tipo _String_.
+atributo CEP do tipo _String_.
 
-Vamos criar uma validação no server, vamos criar o arquivo
+Vamos criar uma validação no server com o arquivo
 `app/validators/cep_validator.rb`, lembrando que a pasta validators também
 precisa se criada:
 
@@ -174,7 +175,7 @@ class CepValidator < ActiveModel::EachValidator
 end
 ```
 
-Essa validação nos permitirá adicionar a validação de Cep no model, como no
+Essa validação nos permitirá adicionar a validação de CEP no model, como no
 exemplo abaixo:
 
 ```ruby
@@ -222,7 +223,7 @@ end
 ```
 
 Como adicionamos um arquivo na pasta `lib`, vamos adicionar a pasta lib no
-`autoload`, edit o arquivo `config/application.rb` com a seguinte linha:
+`autoload`, edite o arquivo `config/application.rb` com a seguinte linha:
 
 ```ruby
 config.autoload_paths << "#{Rails.root}/lib"
@@ -270,12 +271,12 @@ pt-BR:
   activerecord:
     errors:
       messages:
-        cep: Cep inexistente
+        cep: CEP inexistente
         record_invalid: 'A validação falhou: %{errors}'
 ...
 ```
 
-Você deve inserir a linha `cep: Cep inexistente` abaixo de `messages:` e
+Você deve inserir a linha `cep: CEP inexistente` abaixo de `messages:` e
 identado com dois espaços.
 
 [ClientSideValidations]:https://github.com/DavyJonesLocker/client_side_validations
