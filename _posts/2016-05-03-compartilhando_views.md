@@ -1,7 +1,7 @@
 ---
 layout: post
 published: false
-title: Compartilhando views
+title: Compartilhando Views
 author:
   display_name: Alan Batista
 ---
@@ -24,8 +24,8 @@ Onde, `minha_partial` estará em: `app/views/shared/_minha_partial.html.erb`.
 
 ## Usando o framework ao seu favor
 
-O _lookup_ das views no Rails 4.x (que é a versão durante esse post) é
-feito na pasta com mesmo nome do controller no plural, exemplo:
+O _lookup_ das views no Rails 4.x (que é a versão estável enquanto escrevo esse
+post) é feito na pasta com mesmo nome do controller no plural, exemplo: 
 `app/views/customers/` ou na pasta application, `app/views/application`.
 
 Sendo assim, colocando `_minha_partial.html.erb` dentro da pasta
