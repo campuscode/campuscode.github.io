@@ -6,8 +6,6 @@ author:
   display_name: Alan Batista
 ---
 
-## Introdução
-
 Com alguma frequência nos perguntam como fazer validação no browser, que neste
 post chamaremos de _Client Side Validations_ ou validações no lado do cliente.
 
@@ -81,7 +79,7 @@ agora.
 Agora no seu form você deve dizer que usará validações, como a seguir:
 
 ```erb
-<%= form_for(@model), validations: true %>
+<%= form_for(@model, validate: true) %>
 ...
 <% end %>
 ```
@@ -90,9 +88,7 @@ No seu model dever ter as validações necessárias, exemplo:
 
 ```ruby
 class Customer < ActiveRecord::Base
-  has_many :contracts
-  validates :name, :cpf, presence: true
-  validates :cpf, numericality: true
+  validates :name, :cpf, :address_number, :address_street, presence: true
 end
 
 ```
@@ -109,12 +105,13 @@ No meu teste, fiz a validação em um model Customer, então vamos vê-lo no bro
 http://localhost:3000/customers/new
 ```
 
-E tentar salvar nosso form:
+Veja agora como fica sem o client_side_validations:
 
-IMAGEM
+![Sem client_side_validations](/assets/images/sem_client_side.gif)
 
-E como podemos ver no log, nada foi enviado, como esperado:
+E agora com client_side_validations:
 
+![Com client_side_validations](/assets/images/com_client_side.gif)
 
 Calma que não acabamos ainda, esse gem tem um plugin para o
 [SimpleForm][simple-form] que para nós aqui no __Campus Code__ faz toda a
@@ -141,8 +138,8 @@ receberá um erro de javascript na sua página por conta das dependências.
 E para adicionar no seu form é simples como deve ser:
 
 ```erb
-<%= simple_form_for @book, validate: true do |book| %>
-  <%= book.input :name %>
+<%= simple_form_for @customer, validate: true do |f| %>
+  <%= f.input :name %>
 <% end %>
 ```
 
@@ -181,9 +178,9 @@ Essa validação nos permitirá adicionar a validação de Cep no model, como no
 exemplo abaixo:
 
 ```ruby
-class Company < ActiveRecord::Base
+class Customer < ActiveRecord::Base
 ...
-  validates :name, :location, :mail, :phone, :cep, presence: true
+  validates :name, :cpf, :address_number, :address_street, presence: true
   validates :cep, cep: true
 ...
 end
@@ -192,7 +189,7 @@ end
 Pronto, a validação está pronta para ser executado no server, mas espere, o foco
 desse post era a validação no client, entãa vamos lá.
 
-Crie o arquivos `app/assets/javacripts/rails.validations.customValidators.js`
+Crie o arquivos `app/assets/javascripts/rails.validations.customValidators.js`
 com o seguinte conteúdo:
 
 ```javascript
@@ -207,7 +204,7 @@ window.ClientSideValidations.validators.remote['cep'] = function(element, option
 ```
 
 Agora nós precisamos criar um middleware para lidar com a validação client side,
-para isso vamos criar o arquivo 'lib/client_side_validations/middleware/cep.rb':
+para isso vamos criar o arquivo `lib/client_side_validations/middleware/cep.rb`:
 
 ```ruby
 module ClientSideValidations::Middleware
