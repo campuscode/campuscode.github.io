@@ -1,6 +1,5 @@
 ---
 layout: post
-published: false
 title: Compartilhando Views
 author:
   display_name: Alan Batista
