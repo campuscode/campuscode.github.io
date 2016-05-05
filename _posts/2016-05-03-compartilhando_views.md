@@ -24,8 +24,10 @@ Onde, `minha_partial` estará em: `app/views/shared/_minha_partial.html.erb`.
 ## Usando o framework ao seu favor
 
 O _lookup_ das views no Rails 4.x (que é a versão estável enquanto escrevo esse
-post) é feito na pasta com mesmo nome do controller no plural, exemplo: 
-`app/views/customers/` ou na pasta application, `app/views/application`.
+post) é feito na pasta com mesmo nome do controller, exemplo: 
+`app/views/customers/` para o controller `CustomersController` ou na pasta 
+application, `app/views/application` para o controller `ApplicationController`,
+este último normalmente herdado por todos os controllers da nossa aplicação.
 
 Sendo assim, colocando `_minha_partial.html.erb` dentro da pasta
 `app/views/application/` nos permitiria usar nossa partial assim:
