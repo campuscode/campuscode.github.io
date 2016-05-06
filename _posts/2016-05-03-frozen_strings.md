@@ -1,6 +1,5 @@
 ---
 layout: post
-published: false
 title: Frozen Strings
 author:
   display_name: Alan Batista
