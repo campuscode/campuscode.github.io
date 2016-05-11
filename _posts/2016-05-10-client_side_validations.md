@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Client Side Validations
-published: false
+published: true
 author:
   display_name: Alan Batista
 ---
@@ -254,7 +254,7 @@ en:
 
 É isso, vamos testar agora:
 
-IMAGEM
+![Em Português](/assets/images/client_side_pt-BR.png)
 
 ## Bônus
 
