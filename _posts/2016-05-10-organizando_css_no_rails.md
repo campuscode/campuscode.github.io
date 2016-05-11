@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Organizando seu CSS no Rails com Sass
-published: false
 author:
   display_name: João Almeida
 ---
