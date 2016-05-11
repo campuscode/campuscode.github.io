@@ -171,11 +171,11 @@ rake db:migrate
 ```
 
 Vamos criar uma validação no server com o arquivo
-`app/validators/cep_validator.rb`, lembrando que a pasta validators também
+`app/validators/brazilian_zip_code_validator.rb`, lembrando que a pasta validators também
 precisa se criada:
 
 ```ruby
-class CepValidator < ActiveModel::EachValidator
+class BrazilianZipCodeValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
     unless Cep.find_by(codigo: value)
       record.errors.add(:cep, :cep) # atributo :cep, chave do locale :cep
@@ -191,7 +191,7 @@ exemplo abaixo:
 class Customer < ActiveRecord::Base
 ...
   validates :name, :cpf, :address_number, :address_street, presence: true
-  validates :cep, cep: true
+  validates :cep, brazilian_zip_code: true
 ...
 end
 ```
@@ -203,7 +203,7 @@ Crie o arquivos `app/assets/javascripts/rails.validations.customValidators.js`
 com o seguinte conteúdo:
 
 ```javascript
-window.ClientSideValidations.validators.remote['cep'] = function(element, options) {
+window.ClientSideValidations.validators.remote['brazilian_zip_code'] = function(element, options) {
   if ($.ajax({
     url: '/validators/cep',
     data: { id: element.val() },
@@ -249,7 +249,7 @@ de erro para ser exibida no client, para isso vamos editar o arquivo
 en:
   errors:
     messages:
-      cep: "Not a valid zip code"
+      brazilian_zip_code: "Not a valid zip code"
 ```
 
 É isso, vamos testar agora:
@@ -273,7 +273,8 @@ Depois, na pasta do seu projeto, adicione esse [arquivo][pt-br.yml] na pasta
 pasta locale do projeto:
 
 ```
-curl -O https://raw.githubusercontent.com/svenfuchs/rails-i18n/c0927b490aa2ff9c536c15bcb2eebed77aa22e88/rails/locale/pt-BR.yml
+cd config/locale
+curl -O https://raw.githubusercontent.com/svenfuchs/rails-i18n/master/rails/locale/pt-BR.yml
 ```
 
 E edite o arquivo `config/locales/pt-BR.yml` respeitando a identação:
@@ -283,12 +284,11 @@ pt-BR:
   activerecord:
     errors:
       messages:
-        cep: CEP inexistente
-        record_invalid: 'A validação falhou: %{errors}'
+        brazilian_zip_code: CEP inexistente # <----- adicione sua linha aqui!
 ...
 ```
 
-Você deve inserir a linha `cep: CEP inexistente` abaixo de `messages:` e
+Você deve inserir a linha `brazilian_zip_code: CEP inexistente` abaixo de `messages:` e
 identado com dois espaços.
 
 ## Conclusão
@@ -296,9 +296,12 @@ identado com dois espaços.
 Com essa gem fica fácil adicionar validação Client Side, mesmo para as
 validações remotas, se feita com atenção, é bastante simples.
 
+O código usado neste post está [aqui][codigo_exemplo]
+
 E nos seus projetos, como você costuma criar as validações?
 
+[codigo_exemplo]:https://github.com/campuscode/client_side_validations_example
 [ClientSideValidations]:https://github.com/DavyJonesLocker/client_side_validations
 [bestpraticesvalidations]:http://alistapart.com/article/inline-validation-in-web-forms
 [simple-form]:https://github.com/plataformatec/simple_form
-[pt-br.yml]:https://raw.githubusercontent.com/svenfuchs/rails-i18n/c0927b490aa2ff9c536c15bcb2eebed77aa22e88/rails/locale/pt-BR.yml
+[pt-br.yml]:https://raw.githubusercontent.com/svenfuchs/rails-i18n/master/rails/locale/pt-BR.yml
