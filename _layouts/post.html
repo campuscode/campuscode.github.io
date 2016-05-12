@@ -16,8 +16,10 @@ layout: default
     </p>
   </header>
 
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
+  <div class="post-content">
+    <div itemprop="articleBody">
+      {{ content }}
+    </div>
     <h2>Comentários</h2>
     {% include disqus.html %}
   </div>
