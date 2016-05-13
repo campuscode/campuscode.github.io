@@ -7,8 +7,14 @@
     margin-bottom: 10px;
     padding-top: 20px;
     text-align: center;
-    // Positioning context for the mobile navigation icon
     position: relative;
+
+    p {
+      margin-top: 40px;
+      line-height: 1.5em;
+      width: 70%;
+      margin: 30px auto 20px;
+    }
 }
 
 .site-title {
@@ -261,4 +267,27 @@
     border-radius: 3px;
     margin: 10px 0;
   }
+}
+
+.ad {
+  background-color: $grey-color-light;
+  font-size: 0.9em;
+  padding: 20px;
+  margin: 40px 0;
+  display: flex;
+
+  img {
+    float: left;
+    margin-right: 15px;
+  }
+
+  p {
+    float: left;
+  }
+
+  .lead {
+    font-size: 1em;
+    font-weight: 500;
+  }
+
 }

@@ -1,28 +1,34 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta">
-    <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-      {{ page.date | date: "%b %-d, %Y" }}</time>
-      {% if page.author %}
-    • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">{{ page.author.display_name }}</span>
-      </span>
-    {% endif %}
-    </p>
-    {% include social-share.html %}
-  </header>
+{% include internal-header.html %}
 
-  <div class="post-content">
-    <div itemprop="articleBody">
-      {{ content }}
-    </div>
-    <h2>Comentários</h2>
-    {% include disqus.html %}
+<div class="page-content">
+  <div class="wrapper">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+        <p class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          {{ page.date | date: "%b %-d, %Y" }}</time>
+        {% if page.author %}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span itemprop="name">{{ page.author.display_name }}</span>
+        </span>
+        {% endif %}
+        </p>
+        {% include social-share.html %}
+      </header>
+      <div class="post-content">
+        <div itemprop="articleBody">
+          {{ content }}
+        </div>
+        {% include ad.html %}
+        <h2>Comentários</h2>
+        {% include disqus.html %}
+      </div>
+    </article>
   </div>
-
-</article>
+</div>
