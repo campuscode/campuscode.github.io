@@ -212,6 +212,10 @@
  */
 .post-header {
   margin-bottom: $spacing-unit;
+
+  .fb-share-button {
+    top: -6px;
+  }
 }
 
 .post-title {
