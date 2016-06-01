@@ -48,7 +48,7 @@ entender porque.
 Uma ida rápida ao nosso amigo __IRB__ revela o seguinte:
 
 ```ruby
-2.3.0 :001 > Article.create(title: "Teste", body: "Qualquer")
+2.3.0 :001 > article = Article.create(title: "Teste", body: "Qualquer")
     (0.1ms)  begin transaction
 SQL (1.1ms)  INSERT INTO "articles" ("published", "title", "body", "created_at",
 "updated_at") VALUES (?, ?, ?, ?, ?)  [["published", "t"], ["title", "Teste"], 
@@ -57,6 +57,9 @@ SQL (1.1ms)  INSERT INTO "articles" ("published", "title", "body", "created_at",
    (0.9ms)  commit transaction
  => <Article id: 1, title: "Teste", body: "Qualquer", PUBLISHED: TRUE,
 created_at: "2016-05-20 20:00:14", updated_at: "2016-05-20 20:00:14">
+
+2.3.0 :002 > article.published
+true
 ```
 
 Como assim? Quando você criou um artigo, sem definir se publicado ou não, ele
@@ -65,7 +68,7 @@ foi automaticamente definido como publicado? Não é possível, deve ser bug!
 É meu caro! O __Default Scope__ está cobrando seu preço, e a falta de testes no
 seu código também.
 
-## Como melhorar
+## Como melhorar?
 
 A primeira coisa que eu diria para você é: __seja específico!__ Se quer buscar
 artigos publicados crie algo como:
