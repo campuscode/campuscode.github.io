@@ -6,22 +6,16 @@ author:
   display_name: Alan Batista
 ---
 
-Você está desenvolvendo um site institucional e este tem um model `Article` que
-sempre que você precisa obter a lista de Articles, que acontece com muita
+Você está desenvolvendo um site institucional e cria um model `Article`. Daí
+sempre que você precisa obter a lista de Articles, o que acontece com muita
 frequência, faz a seguinte consulta:
 
 ```ruby
 Articles.where(published: true)
 ```
 
-mas o que você queria era mesmo algo como:
-
-```ruby
-Articles.all
-```
-
-Só que nesse caso os Artigos (Articles) não publicados também são retornados,
-chato não?
+Mas o que você queria mesmo era chamar `Articles.all` e receber somente os
+artigos (Articles) publicados.
 
 ## Default Scope
 
@@ -37,7 +31,7 @@ end
 Sucesso! Agora `Article.all` retorna somente os artigos publicados! Mas espera
 aí! E os não publicados? 
 
-Uma consulta rápida no google, te dá a resposta esperada:
+Uma consulta rápida no Google te dá a resposta esperada:
 
 ```ruby
 Articles.unscoped.all
@@ -48,7 +42,7 @@ Duplo sucesso! Todos seus problemas estão resolvidos!
 ## O perigo mora ao lado
 
 Alguém, um estraga prazer, te avisa que todos os artigos estão sendo
-automaticamente criados como publicados (published true) e você não consegue
+automaticamente criados como publicados (`published: true`) e você não consegue
 entender porque.
 
 Uma ida rápida ao nosso amigo __IRB__ revela o seguinte:
@@ -73,8 +67,8 @@ seu código também.
 
 ## Como melhorar
 
-Primeira coisa que eu diria para você é, seja específico! Se quer os artigos não
-publicados crie algo como:
+A primeira coisa que eu diria para você é: __seja específico!__ Se quer buscar
+artigos publicados crie algo como:
 
 ```ruby
 class Article < ActiveRecord::Base
@@ -82,23 +76,23 @@ class Article < ActiveRecord::Base
 end
 ```
 
-Isso lhe permitirá consultar os artigos não publicados assim:
+Isso lhe permitirá consultar os artigos publicados assim:
 
 ```ruby
 Articles.published
 ```
 
-Muito melhor não? E ainda, por não ser o padrão, não afetará a criação de novos
+Muito melhor, não!? E ainda, por não ser o padrão, não afetará a criação de novos
 artigos.
 
 ## Conclusão
 
-Consultar a documentação oficial além de o lugar correto para encontrar
-informação precisa, é ótimo para evitar problemas.
+Consulte a documentação oficial. Além de ser o lugar correto para encontrar
+informações precisas é ótimo para evitar problemas.
 
-No caso do __default scope__ o guides não diz muito sobre como ele se comporta
+No caso do __default scope__ o Rails Guides não diz muito sobre o comportamento
 na criação de novos registros, sendo necessário consultar a [documentação][api]
-da API do rails.
+da API do Rails.
 
 
 ## Referências
