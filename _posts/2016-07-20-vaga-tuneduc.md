@@ -75,4 +75,5 @@ __Vão te olhar com mais atenção se__:
 Gostou dessa vaga, já se vê trabalhando na Tuneduc? Mande um email para
 [vagas+tuneduc@campuscode.com.br](mailto:vagas+tuneduc@campuscode.com.br).
 
-Acesse [esse]() post no nosso blog para saber como é nosso processo de seleção.
+Acesse
+[esse](5-etapas-para-mudarmos-sua-carreira) post no nosso blog para saber como é nosso processo de seleção.
