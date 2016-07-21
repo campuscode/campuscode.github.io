@@ -80,7 +80,7 @@ vai sentir desconforto no ambiente de trabalho dias depois.
 
 Estamos começando a receber vagas e em breve começaremos as primeiras
 entrevistas. Mas você pode enviar desde já seus dados pra gente no email
-vagas@campuscode.com.br
+[vagas@campuscode.com.br](mailto:vagas@campuscode.com.br)
 
 Toda nova vaga vamos divulgar por aqui também, então não deixe de acompanhar
 nosso blog.
