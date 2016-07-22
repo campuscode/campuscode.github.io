@@ -1,12 +1,12 @@
 ---
 layout: post
-title: 5 etapas para mudarmos sua carreira juntos
+title: 5 etapas para entrar na empresa dos sonhos
 author:
   display_name: Alan Batista e João Almeida
 ---
 
 Processos seletivos de Desenvolvedores costumam ser chatos e "no sense", já vimos
-entrevistas que pedem para o cara fazer uma redação, outras para contar as
+entrevistas que pedem para a pessoa fazer uma redação, outras para contar as
 novidades do framework que saiu semana passada, etc., mas __nada de código!__
 
 Além de formar Desenvolvedores com muito potencial, estamos sempre conhecendo
