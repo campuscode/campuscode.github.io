@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Desenvolvedor(a) Full Stack
+title: Desenvolvedor(a) Full Stack na Tuneduc
 author:
   display_name: Alan Batista
 excerpt: A Tuneduc utiliza um volume imenso de dados para criar produtos que transformam a educação. As nossas plataformas de análise contribuem para as decisões pedagógicas e estratégicas de escolas em todo o Brasil.
