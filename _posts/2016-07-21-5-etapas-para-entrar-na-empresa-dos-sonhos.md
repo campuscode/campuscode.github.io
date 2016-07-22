@@ -5,8 +5,8 @@ author:
   display_name: Alan Batista e João Almeida
 ---
 
-Processos seletivos de Desenvolvedores costumam ser chatos e "no sense", já vimos
-entrevistas que pedem para a pessoa fazer uma redação, outras para contar as
+Processos seletivos de Desenvolvedores costumam ser chatos e "nonsense". Já vimos
+entrevistas que pedem para o cara fazer uma redação, outras para contar as
 novidades do framework que saiu semana passada, etc., mas __nada de código!__
 
 Além de formar Desenvolvedores com muito potencial, estamos sempre conhecendo
@@ -32,7 +32,7 @@ Nesse post vamos explicar um pouco mais sobre cada uma delas.
 
 ## Quem é você?
 
-Antes de mais nada precisamos saber um pouco sobre você. Aqui vale: LinkedIn,
+Antes de mais nada, precisamos saber um pouco sobre você. Aqui vale: LinkedIn,
 GitHub, Blog, o tradicional currículo tem valor também. Envie-nos
 tudo que advogue ao seu favor.
 
@@ -42,8 +42,8 @@ Mesmo recebendo uma enxurrada de informações suas, nada substitui uma boa
 troca de idéias. Além de entender sobre você, podemos te contar sobre os
 __próximos passos__ do processo e qualquer outra informação que possa te ajudar.
 
-Gostamos muito de falar sobre código, decisões de arquitetura de software, práticas
-de engenharia (de software, rsrs) e afins.
+Gostamos muito de falar sobre código, decisões de arquitetura de software,
+práticas de engenharia (de software, rsrs) e afins.
 
 ## Quem sabe faz!
 
@@ -80,11 +80,11 @@ vai sentir desconforto no ambiente de trabalho dias depois.
 
 Estamos começando a receber vagas e em breve começaremos as primeiras
 entrevistas. Mas você pode enviar desde já seus dados pra gente no email
-[vagas@campuscode.com.br](mailto:vagas@campuscode.com.br)
+vagas@campuscode.com.br
 
 Toda nova vaga vamos divulgar por aqui também, então não deixe de acompanhar
 nosso blog.
 
 Espero que você encontre seu próximo desafio conosco :)
 
-
+--
