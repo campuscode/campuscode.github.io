@@ -21,6 +21,8 @@ estatísticos, gráficos, tecnologia e, acima de tudo, por Educação.
 Eles levam o conceito de Big Data a sério, manipulando um volume imenso de dados
 extraídos de diversas fontes e em diferentes formatos.
 
+![Campus Code + Tuneduc](/assets/images/campus_tuneduc.jpg)
+
 ## Como foi passar o dia lá?
 
 Vimos todos os Devs com 2 monitores, alguns deles com a tela toda preta, TMUX
