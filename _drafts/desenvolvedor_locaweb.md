@@ -1,8 +1,10 @@
 ---
 layout: post
 title: Desenvolvedor(a) Full Stack na Locaweb
+date: 2016-09-01
 author:
   display_name: João Almeida
+excerpt: Bem, a Locaweb dispensa apresentações. O que muitos não conhecem são os times e tecnologias que mantém tudo funcionando. Lá realmente a liberdade na escolha de tecnologias e o desenvolvimento ágil são realidade.
 ---
 
 ## Falando da Locaweb
