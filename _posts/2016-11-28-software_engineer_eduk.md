@@ -69,7 +69,7 @@ participar de reuniões de criação com outros proﬁssionais como Designers e 
 ### Curtiu?
 
 Já está pensando como será seu primeiro dia na eduK? Então se inscreva pelo 
-[eduk.workable.com](https://eduk.workable.com/jobs/305984/preview?show_description=true)
+[eduk.workable.com](https://eduk.workable.com/jobs/305984)
 e vamos bater um papo.
 
 Acesse [esse](5-etapas-para-entrar-na-empresa-dos-sonhos) post no nosso blog para saber como é nosso processo de seleção.
